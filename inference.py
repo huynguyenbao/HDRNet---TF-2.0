@@ -25,7 +25,7 @@ if __name__ == "__main__":
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--pretrain_dir', type=str, default= "weights//ckpt")
     parser.add_argument('--low_size', type=int, default=256)
-    parser.add_argument('--full_size', type=int, default=None)
+    parser.add_argument('--full_size', type=int, default=1024)
 
     config = parser.parse_args()
 
