@@ -1,5 +1,6 @@
 # !pip install rawpy
 import rawpy
+import tensorflow as tf
 
 def load_raw(path, size=None):
     path = bytes.decode(path.numpy())

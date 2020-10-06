@@ -4,6 +4,7 @@ import argparse
 from skimage import exposure
 import matplotlib.pyplot as plt
 import rawpy
+import os
 
 def load_raw(path, size=None):
     with rawpy.imread(path) as raw:
