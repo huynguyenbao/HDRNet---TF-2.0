@@ -39,11 +39,12 @@ def fit(model, lowers, fullers, targets, checkpoints_folder="weights//ckpt", epo
             loss = train_step(model, sample_lower, sample_fuller, sample_target, optimizer)
             progress(e+1, (ite+1), len(lowers), loss=loss)
             total_loss.append(loss)
-            end = time.time()
-            print("\nEpoch {0}: ---------- Avg Loss: {1}, time exection: {2}".format(e+1, sum(total_loss) / len(total_loss), end - start))
+        end = time.time()
+        print("\nEpoch {0}: ---------- Avg Loss: {1}, time exection: {2}".format(e+1, sum(total_loss) / len(total_loss), end - start))
             
-            if (e+1) % 10 == 0:
-                model.save_weights(checkpoints_folder)
+        if (e+1) % 10 == 0:
+            model.save_weights(checkpoints_folder)
+            print("Model has been saved at epoch: {}.".format(e+1))
 
 
 if __name__ == "__main__":
