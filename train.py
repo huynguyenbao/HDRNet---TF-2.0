@@ -5,6 +5,7 @@ import time
 from preprocess import preprocess_data
 from model import HDRPointwiseNN
 import argparse
+import os
 
 
 def progress(epoch, trained_sample ,total_sample, bar_length=25, loss=0, message=""):
