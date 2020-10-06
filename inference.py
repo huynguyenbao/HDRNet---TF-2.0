@@ -5,6 +5,7 @@ from skimage import exposure
 import matplotlib.pyplot as plt
 import rawpy
 import os
+import numpy as np
 
 def load_raw(path, size=None):
     with rawpy.imread(path) as raw:
