@@ -13,9 +13,9 @@ class ConvBlock(tf.keras.layers.Layer):
     def call(self, x):
         x = self.conv(x)
         if self.batch_norm:
-        x = self.batch_norm(x)
+            x = self.batch_norm(x)
         if self.activation:
-        x = self.activation(x)
+            x = self.activation(x)
         return x
 
 class FC(tf.keras.layers.Layer):
@@ -29,9 +29,9 @@ class FC(tf.keras.layers.Layer):
     def call(self, x):
         x = self.fc(x)
         if self.batch_norm:
-        x = self.batch_norm(x)
+            x = self.batch_norm(x)
         if self.activation:
-        x = self.activation(x)
+            x = self.activation(x)
         return x
   
 class Coeffs(tf.keras.layers.Layer):
@@ -50,9 +50,9 @@ class Coeffs(tf.keras.layers.Layer):
         # Features Extractor
         self.extractor = tf.keras.Sequential()
         for i in range(n_extractor_layers):
-        use_batch_norm = batch_norm if i > 0 else False
-        filters = 2**(i + 1) * self.lb
-        self.extractor.add(ConvBlock(filters, stride=2, batch_norm=use_batch_norm))
+            use_batch_norm = batch_norm if i > 0 else False
+            filters = 2**(i + 1) * self.lb
+            self.extractor.add(ConvBlock(filters, stride=2, batch_norm=use_batch_norm))
     
         # Local Features Extractor
         self.local_extractor = tf.keras.Sequential()
